@@ -1,0 +1,199 @@
+/* --------------------
+   Global helpers
+-------------------- */
+:root {
+  --bg-dark: #0b0d10;
+  --bg-soft: #12151c;
+  --text-main: #eaeaf0;
+  --text-muted: #a1a1aa;
+  --accent: #7c7cff;
+}
+
+* {
+  /* box-sizing: border-box; */
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+  background: var(--bg-dark);
+  color: var(--text-main);
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+}
+
+/* --------------------
+HERO / NAME SECTION
+-------------------- */
+.hero-scene {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+/* .name-section {
+  width: 100%;
+  padding: 4rem 1.5rem;
+  text-align: center;
+  background-color===== HERO BASE ===== */
+
+/* ===== NAME ===== */
+.name-section {
+  position: relative;
+  z-index: 2;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-greeting {
+  color: #a1a1aa;
+  letter-spacing: 0.15em;
+  margin-bottom: 2rem;
+}
+
+.name-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+}
+
+.name-word {
+  display: flex;
+  gap: 10px;
+}
+
+/* EACH LETTER IS A BOX */
+.letter-box {
+  font-size: 4rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== OVERLAY ===== */
+.overlay {
+  position: relative;
+  z-index: 5;
+}
+
+.panel {
+  min-height: 100vh;
+  background: #12151c;
+  padding: 6rem 2rem;
+  transform: translateY(100%);
+}
+
+.hero-greeting {
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 2.5rem;
+}
+
+/* AnimateText letters will inherit this */
+.name-section div > div {
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  line-height: 1;
+}
+
+/* Slight depth without being gimmicky */
+.name-section div > div span,
+.name-section div > div div {
+  text-shadow: 0 10px 30px rgba(124, 124, 255, 0.15);
+}
+
+/* --------------------
+   ABOUT SECTION
+-------------------- */
+.about {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 5rem 1.5rem 3rem;
+}
+
+.about h2 {
+  font-size: 2rem;
+  margin-bottom: 1.25rem;
+  position: relative;
+}
+
+.about h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--accent);
+  margin-top: 0.5rem;
+}
+
+.about p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+}
+
+/* --------------------
+   SKILLS SECTION
+-------------------- */
+.skills {
+  background: var(--bg-soft);
+  padding: 5rem 1.5rem;
+}
+
+.skills h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+}
+
+.skill-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+/* --------------------
+   PROJECTS (placeholder)
+-------------------- */
+.projects {
+  min-height: 40vh;
+  padding: 4rem 1.5rem;
+}
+
+/* --------------------
+   RESPONSIVE TUNING
+-------------------- */
+@media (max-width: 768px) {
+  .name-section {
+    padding-top: 6rem;
+  }
+
+  .hero-greeting {
+    font-size: 1rem;
+  }
+
+  .about,
+  .skills {
+    padding-top: 3.5rem;
+  }
+}

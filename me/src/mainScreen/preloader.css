@@ -1,0 +1,54 @@
+.intro-container {
+  position: fixed;
+  inset: 0;
+  background: #050505;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 999;
+}
+
+.intro-text {
+  position: relative;
+  z-index: 2;
+  font-family: monospace;
+  font-size: 1.4rem;
+  color: white;
+  white-space: pre-wrap;
+}
+
+/* Geometry layer */
+.triangles {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.triangle {
+  position: absolute;
+  width: 0;
+  height: 0;
+
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 20px solid rgba(255, 255, 255, 0.1);
+
+  animation: float 3s ease-in-out forwards;
+}
+
+@keyframes float {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.5);
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-120px) scale(1.3);
+  }
+}
