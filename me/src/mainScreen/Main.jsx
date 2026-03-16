@@ -1,11 +1,11 @@
 import React from "react";
 import "../App.css";
 import Hero from "../components/Hero";
-import Sidebar from "../components/Sidebar";
+import Navbar from "../components/Navbar";
 const Main = () => {
   return (
     <div className="App" style={{ display: "flex", flexDirection: "column" }}>
-      <Sidebar />
+      <Navbar />
       <Hero />
     </div>
   );
