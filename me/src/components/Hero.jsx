@@ -2,7 +2,11 @@ import AnimateText from "./AnimateText";
 import MiniGame from "./MiniGame/Game";
 import { useState } from "react";
 import "./hero.css";
-
+import photo from "./images/image.png";
+import { ReactComponent as Linkedin } from "./images/linkedin.svg";
+import { ReactComponent as Github } from "./images/github.svg";
+import { ReactComponent as Gmail } from "./images/gmail.svg";
+import { ReactComponent as Medium } from "./images/medium.svg";
 // ─── REAL DATA ────────────────────────────────────────────────
 
 const SKILLS = [
@@ -45,7 +49,7 @@ const PROJECTS = [
     emoji: "🏗️",
     title: "Real-World Asset Tokenization Platform",
     description:
-      "Blockchain platform enabling fractional ownership of physical assets — real estate, commodities — using the ERC-1155 multi-token standard. Solidity contracts are complete; frontend integration in progress. Solves the liquidity problem of traditionally illiquid assets by putting them on-chain.",
+      "Blockchain platform enabling fractional ownership of physical assets such as real estate, commodities, using the ERC-1155 multi-token standard. Solidity contracts are complete; frontend integration in progress. Solves the liquidity problem of traditionally illiquid assets by putting them on-chain.",
     tagLabels: [
       { label: "Blockchain", type: "blockchain" },
       { label: "In Progress", type: "systems" },
@@ -58,7 +62,7 @@ const PROJECTS = [
     featured: false,
     title: "CrowdCoin",
     description:
-      "Decentralised crowdfunding dApp inspired by Kickstarter — built entirely on Ethereum. Campaign creators set spending rules enforced by smart contracts; contributors vote on fund releases. Deployed and tested on Ethereum testnet with Hardhat.",
+      "Decentralised crowdfunding dApp inspired by Kickstarter, built entirely on Ethereum. Campaign creators set spending rules enforced by smart contracts; contributors vote on fund releases. Deployed and tested on Ethereum testnet with Hardhat.",
     tagLabels: [
       { label: "Blockchain", type: "blockchain" },
       { label: "dApp", type: "systems" },
@@ -71,10 +75,23 @@ const PROJECTS = [
     featured: false,
     title: "CubeCrypt Encryption Algorithm",
     description:
-      "A novel symmetric encryption algorithm in Python inspired by Rubik's cube permutations, designed for secure file transmission. Published independently — a working, documented cryptographic scheme with practical applications.",
+      "A novel symmetric encryption algorithm in Python inspired by Rubik's cube permutations, designed for secure file transmission. Published a working, documented cryptographic scheme with practical applications.",
     tagLabels: [
       { label: "Research", type: "research" },
       { label: "Published", type: "research" },
+    ],
+    year: "2025",
+    link: null,
+  },
+  {
+    id: "medical-ledger",
+    featured: false,
+    title: "Digital Ledger for Medical Records",
+    description:
+      "Research presented at ICIAS 2025-International Conference on Computational Intelligence and Autonomous Systems. Proposes a decentralised, tamper-proof system for secure patient record access using blockchain.",
+    tagLabels: [
+      { label: "Research", type: "research" },
+      { label: "ICIAS 2025", type: "research" },
     ],
     year: "2025",
     link: null,
@@ -92,19 +109,7 @@ const PROJECTS = [
     year: "2024",
     link: "https://github.com/HarpreetSingh2005/Gsap-Apple-LandingPage",
   },
-  {
-    id: "medical-ledger",
-    featured: false,
-    title: "Digital Ledger for Medical Records",
-    description:
-      "Research presented at ICIAS 2025 — International Conference on Computational Intelligence and Autonomous Systems. Proposes a decentralised, tamper-proof system for secure patient record access using blockchain.",
-    tagLabels: [
-      { label: "Research", type: "research" },
-      { label: "ICIAS 2025", type: "research" },
-    ],
-    year: "2025",
-    link: null,
-  },
+
   {
     id: "beyond-limitz",
     featured: false,
@@ -122,20 +127,20 @@ const PROJECTS = [
 ];
 
 const ACHIEVEMENTS = [
-  { icon: "🥈", text: "2nd Place — Internal Smart India Hackathon 2025" },
-  { icon: "🏅", text: "4th Place — Ignite Ideathon, University Level 2025" },
+  { icon: "🥈", text: "2nd Place: Internal Smart India Hackathon 2025" },
+  { icon: "🏅", text: "4th Place: Ignite Ideathon, University Level 2025" },
   {
     icon: "🧠",
-    text: "2nd Place — Logic League, DSA & Problem Solving, Avikansha Fest 2025 (NMIMS)",
+    text: "2nd Place: Logic League, DSA & Problem Solving, Avikansha Fest 2025 (NMIMS)",
   },
   {
     icon: "📖",
-    text: 'Author — "Beyond LimitZ: Journey to Mindset Success" (Pen Name: Mr. Mulbbies)',
+    text: 'Author: "Beyond LimitZ: Journey to Mindset Success" (Pen Name: Mr. Mulbbies)',
   },
   { icon: "🪖", text: "NCC 'A' Grade Certificate" },
   {
     icon: "♟️",
-    text: "Volunteered — FIDE Rated Chess Championship, 100+ participants",
+    text: "Volunteered: FIDE Rated Chess Championship, 100+ participants",
   },
 ];
 
@@ -273,49 +278,68 @@ export default function HeroText() {
             <h2 className="section-title">
               Engineer. Researcher. <span className="highlight">Builder.</span>
             </h2>
+            {/* Main content + image wrapper */}
+            <div className="about-main">
+              {/* Left: text content */}
+              <div className="about-content">
+                <div className="about-label">
+                  {["A", "B", "O", "U", "T"].map((char, i) => (
+                    <span key={i} className="about-letter">
+                      {char}
+                    </span>
+                  ))}
+                </div>
 
-            <div className="about-content">
-              <div className="about-label">
-                {["A", "B", "O", "U", "T"].map((char, i) => (
-                  <span key={i} className="about-letter">
-                    {char}
-                  </span>
-                ))}
+                <div className="about-body">
+                  <p>
+                    I'm a{" "}
+                    <strong>
+                      blockchain-focused Computer Science undergraduate
+                    </strong>{" "}
+                    with hands-on expertise in Solidity smart contract
+                    development and dApp deployment. I don't just build
+                    projects, I explore ideas deeply, question assumptions, and
+                    turn concepts into working, real-world systems.
+                  </p>
+                  <p>
+                    I've developed{" "}
+                    <strong>
+                      dApps, smart contracts, and encryption systems
+                    </strong>
+                    , including a deployed crowdfunding protocol, an ERC-1155
+                    RWA platform, and a{" "}
+                    <strong>published encryption algorithm</strong>. My work has
+                    been presented at <strong>international conferences</strong>
+                    , with ongoing research and a{" "}
+                    <strong>patent in progress</strong>.
+                  </p>
+                  <p>
+                    Alongside engineering, I'm a{" "}
+                    <strong>creative enthusiast.</strong> I sketch system
+                    architectures, build 3D web experiences, and apply the same
+                    problem-solving lens to design that I do to code. I am also
+                    an <strong>Author</strong> of book "Beyond LimitZ". Each one
+                    a way to document ideas and push them forward.
+                  </p>
+                  <p
+                    style={{
+                      textAlign: "center",
+                      fontSize: "1.5rem",
+                    }}
+                  >
+                    {" "}
+                    "I believe the best technology sits at the balance of{" "}
+                    <strong>logic, research, and creativity</strong>."
+                  </p>
+                </div>
               </div>
-
-              <div className="about-body">
-                <p>
-                  I'm a{" "}
-                  <strong>
-                    blockchain-focused Computer Science undergraduate
-                  </strong>{" "}
-                  with hands-on expertise in Solidity smart contract development
-                  and dApp deployment. I don't just build projects — I explore
-                  ideas deeply, question assumptions, and turn concepts into
-                  working, real-world systems.
-                </p>
-                <p>
-                  My work spans{" "}
-                  <strong>
-                    decentralised applications, encryption algorithms, smart
-                    contracts, and protocol-level research
-                  </strong>
-                  . I've presented research at{" "}
-                  <strong>international conferences</strong>, published a{" "}
-                  <strong>novel encryption algorithm</strong>, filed a{" "}
-                  <strong>patent</strong>, and authored a{" "}
-                  <strong>self-help book</strong> under the pen name Mr.
-                  Mulbbies — each one a way to document ideas and push them
-                  forward.
-                </p>
-                <p>
-                  Alongside engineering, I'm a{" "}
-                  <strong>creative enthusiast</strong> — I sketch system
-                  architectures, build 3D web experiences, and apply the same
-                  problem-solving lens to design that I do to code. I believe
-                  the best technology sits at the balance of{" "}
-                  <strong>logic, research, and creativity</strong>.
-                </p>
+              {/* Right: your photo */}
+              <div className="about-photo-wrapper">
+                <img
+                  src={photo} // ← replace with your image path
+                  alt="Harpreet - Blockchain Engineer & Researcher"
+                  className="about-photo"
+                />
               </div>
             </div>
 
@@ -414,7 +438,9 @@ export default function HeroText() {
                 href="mailto:harpreetsingh02092005@gmail.com"
                 className="contact-link primary"
               >
-                <span className="contact-link-icon">✉️</span>
+                <span className="contact-link-icon">
+                  <Gmail width="24" height="24" />
+                </span>
                 <div>
                   <div className="contact-link-label">Email</div>
                   <div className="contact-link-value">
@@ -429,7 +455,9 @@ export default function HeroText() {
                 rel="noopener noreferrer"
                 className="contact-link"
               >
-                <span className="contact-link-icon">💼</span>
+                <span className="contact-link-icon">
+                  <Linkedin width="24" height="24" />
+                </span>
                 <div>
                   <div className="contact-link-label">LinkedIn</div>
                   <div className="contact-link-value">
@@ -444,7 +472,9 @@ export default function HeroText() {
                 rel="noopener noreferrer"
                 className="contact-link"
               >
-                <span className="contact-link-icon">⌨️</span>
+                <span className="contact-link-icon">
+                  <Github width="24" height="24" />
+                </span>
                 <div>
                   <div className="contact-link-label">GitHub</div>
                   <div className="contact-link-value">HarpreetSingh2005</div>
@@ -457,7 +487,9 @@ export default function HeroText() {
                 rel="noopener noreferrer"
                 className="contact-link"
               >
-                <span className="contact-link-icon">✍️</span>
+                <span className="contact-link-icon">
+                  <Medium width="24" height="24" />
+                </span>
                 <div>
                   <div className="contact-link-label">Medium</div>
                   <div className="contact-link-value">
@@ -494,7 +526,7 @@ export default function HeroText() {
             <a href="#contact">Contact</a>
           </div>
           <p className="footer-copy">
-            Built with curiosity, caffeine, and a Mario platformer — ©{" "}
+            Built with curiosity, no sleep, and a Mario platformer — ©{" "}
             {new Date().getFullYear()}
           </p>
         </footer>

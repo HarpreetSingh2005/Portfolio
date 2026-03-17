@@ -221,9 +221,34 @@ body {
   );
 }
 
+.about-main {
+  display: grid;
+  grid-template-columns: 1fr minmax(280px, 380px); /* text takes most space, photo fixed-ish width */
+  gap: 4rem 5rem; /* horizontal gap bigger than vertical */
+  align-items: start;
+  margin-bottom: 4rem;
+}
 .about-inner {
-  max-width: 1100px;
+  max-width: 75rem;
   margin: 0 auto;
+}
+.about-photo {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4/5; /* nice portrait ratio – feel free to use 1/1 or 3/4 */
+  margin-top: 40px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.38);
+  border: 2px solid rgba(65, 60, 60, 0);
+  background: rgba(161, 161, 161, 0.4); /* fallback color if image fails */
+  transition: all 0.4s ease;
+}
+.about-photo:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow:
+    0 30px 70px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(206, 203, 203, 0.25);
 }
 
 .section-eyebrow {
@@ -366,6 +391,39 @@ body {
   color: var(--text-muted);
   letter-spacing: 0.04em;
   padding-bottom: 1.5rem;
+}
+
+/* ────────────────────────────────────────
+   Mobile – stack vertically
+───────────────────────────────────────── */
+@media (max-width: 900px) {
+  .about-main {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  .about-photo-container {
+    justify-self: center;
+    max-width: 320px;
+  }
+
+  .about-photo {
+    aspect-ratio: 4 / 5;
+    max-height: 420px;
+  }
+
+  .about-label {
+    position: static; /* disable sticky on mobile – looks weird otherwise */
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.2rem;
+    padding-top: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-letter {
+    font-size: 2.1rem;
+  }
 }
 
 /* ============================================================
