@@ -557,11 +557,11 @@ body {
   transform: translateX(-50%);
   width: 700px;
   height: 350px;
-  background: radial-gradient(
+  /* background: radial-gradient(
     ellipse,
     rgba(168, 85, 247, 0.09) 0%,
     transparent 70%
-  );
+  ); */
   pointer-events: none;
 }
 
@@ -737,11 +737,11 @@ body {
   width: 180px;
   flex-shrink: 0;
   aspect-ratio: 1;
-  background: linear-gradient(
+  /* background: linear-gradient(
     135deg,
     rgba(124, 124, 255, 0.12),
     rgba(34, 211, 238, 0.08)
-  );
+  ); */
   border-radius: 14px;
   border: 1px solid rgba(124, 124, 255, 0.18);
   display: flex;
@@ -812,11 +812,11 @@ body {
   transform: translateX(-50%);
   width: 600px;
   height: 300px;
-  background: radial-gradient(
+  /* background: radial-gradient(
     ellipse,
     rgba(124, 124, 255, 0.1) 0%,
     transparent 70%
-  );
+  ); */
   pointer-events: none;
 }
 
