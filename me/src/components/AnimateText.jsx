@@ -43,13 +43,13 @@ export default function AnimateText({ char, active, fun }) {
     <div
       className="animate-char"
       style={{
-        width: 56,
-        height: 56,
+        width: "clamp(2.2rem, 10vw, 3.5rem)",
+        height: "clamp(2.2rem, 10vw, 3.5rem)",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
         fontFamily: "monospace",
-        fontSize: "1.6rem",
+        fontSize: "clamp(1.2rem, 3vw, 1.6rem)",
         borderRadius: "10px",
         border: "1px solid #1e1e1e",
         background: bg,

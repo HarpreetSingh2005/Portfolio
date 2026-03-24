@@ -1,6 +1,7 @@
+import { applyThemeVars } from "../theme";
 import AnimateText from "./AnimateText";
 import MiniGame from "./MiniGame/Game";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./hero.css";
 import photo from "./images/image.png";
 import { ReactComponent as Linkedin } from "./images/linkedin.svg";
@@ -21,6 +22,19 @@ const SKILLS = [
       "ERC-20",
       "ERC-721",
       "ERC-1155",
+    ],
+  },
+  {
+    title: "Full Stack Development",
+    items: [
+      "MongoDB",
+      "Express.js",
+      "React.js",
+      "Node.js",
+      "Rest APIs",
+      "Authentication",
+      "Git",
+      "GitHub",
     ],
   },
   {
@@ -75,10 +89,11 @@ const PROJECTS = [
     featured: false,
     title: "CubeCrypt Encryption Algorithm",
     description:
-      "A novel symmetric encryption algorithm in Python inspired by Rubik's cube permutations, designed for secure file transmission. Published a working, documented cryptographic scheme with practical applications.",
+      "A novel symmetric encryption algorithm inspired by Rubik's cube permutations. Published as a cryptographic system with an official patent (IN 202511098477 A).",
     tagLabels: [
-      { label: "Research", type: "research" },
+      // { label: "Research", type: "research" },
       { label: "Published", type: "research" },
+      { label: "IN 202511098477 A", type: "patent-tag" },
     ],
     year: "2025",
     link: null,
@@ -203,6 +218,10 @@ export default function HeroText() {
   const ROW2 = ["GANDHI"];
   const [activeLetters, setActiveLetters] = useState({});
   const [isFun, setIsFun] = useState(false);
+  useEffect(() => {
+    applyThemeVars(isFun ? "fun" : "dark");
+  }, [isFun]);
+  const isMobile = window.innerWidth < 768;
 
   function toggleFun() {
     setIsFun((prev) => !prev);
@@ -222,6 +241,7 @@ export default function HeroText() {
             <div
               className="letter-box game-letter"
               data-letter-id={id}
+              onClick={isMobile ? () => triggerLetter(id) : undefined}
               key={id}
             >
               <AnimateText
@@ -239,14 +259,19 @@ export default function HeroText() {
   return (
     <>
       {/* ══════════════════════════════
-          FIXED HERO SCENE
+         HERO SCENE
       ══════════════════════════════ */}
       <section className="hero-scene">
-        <MiniGame
-          onLetterHit={triggerLetter}
-          fun={isFun}
-          onToggleTheme={toggleFun}
-        />
+        {!isMobile && (
+          <MiniGame
+            onLetterHit={triggerLetter}
+            fun={isFun}
+            onToggleTheme={toggleFun}
+          />
+        )}
+        <button className="theme-toggle hide-on-laptop" onClick={toggleFun}>
+          {isFun ? "◑" : "◐"}
+        </button>
 
         <div className="name-section">
           <p className="hero-greeting">Hello, I'm</p>
@@ -257,7 +282,11 @@ export default function HeroText() {
             {ROW2.map((word, i) => renderWord(word, "r2", i))}
           </div> */}
           <p className="hero-tagline">
-            Blockchain engineer · Researcher · Builder of things that matter
+            Blockchain Engineer · Published Cryptography Researcher · Builder of
+            things that matter
+          </p>
+          <p className="hero-mobile-hint hide-on-laptop">
+            Tap letters to interact
           </p>
         </div>
 
@@ -308,10 +337,11 @@ export default function HeroText() {
                     </strong>
                     , including a deployed crowdfunding protocol, an ERC-1155
                     RWA platform, and a{" "}
-                    <strong>published encryption algorithm</strong>. My work has
-                    been presented at <strong>international conferences</strong>
-                    , with ongoing research and a{" "}
-                    <strong>patent in progress</strong>.
+                    <strong>published encryption algorithm</strong> with a{" "}
+                    <strong>published patent (IN 202511098477 A)</strong>. My
+                    work has been presented at{" "}
+                    <strong>international conferences</strong>, with ongoing
+                    research and a <strong>patent in progress</strong>.
                   </p>
                   <p>
                     Alongside engineering, I'm a{" "}
@@ -345,26 +375,35 @@ export default function HeroText() {
 
             <div className="about-stats">
               <div className="stat-card">
-                <div className="stat-card-icon">🔗</div>
-                <h3>Blockchain</h3>
+                <div className="stat-card-header">
+                  <div className="stat-card-icon">🔗</div>
+                  <h3>Blockchain</h3>
+                </div>
                 <p>dApps, smart contracts, and protocol research on Ethereum</p>
               </div>
               <div className="stat-card">
-                <div className="stat-card-icon">🔬</div>
-                <h3>Research</h3>
+                <div className="stat-card-header">
+                  <div className="stat-card-icon">🔬</div>
+                  <h3>Research</h3>
+                </div>
+                <p>Published at ICIAS 2025 · BOLGA framework</p>
+              </div>
+              <div className="stat-card">
+                <div className="stat-card-header">
+                  <div className="stat-card-icon">🔐</div>
+                  <h3>Patent</h3>
+                </div>
                 <p>
-                  Published at ICIAS 2025 · CubeCrypt algorithm · BOLGA
-                  framework
+                  Published cryptographic system
+                  <br />
+                  IN 202511098477 A
                 </p>
               </div>
               <div className="stat-card">
-                <div className="stat-card-icon">📖</div>
-                <h3>Author</h3>
-                <p>"Beyond LimitZ" on Amazon · 4 articles on Medium</p>
-              </div>
-              <div className="stat-card">
-                <div className="stat-card-icon">🏆</div>
-                <h3>Hackathons</h3>
+                <div className="stat-card-header">
+                  <div className="stat-card-icon">🏆</div>
+                  <h3>Hackathons</h3>
+                </div>
                 <p>Award-winning developer, Smart India Hackathon 2025</p>
               </div>
             </div>
