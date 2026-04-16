@@ -12,19 +12,6 @@ import { ReactComponent as Medium } from "./images/medium.svg";
 
 const SKILLS = [
   {
-    title: "Blockchain & Web3",
-    items: [
-      "Ethereum",
-      "Solidity",
-      "Hardhat",
-      "Ganache",
-      "ethers.js",
-      "ERC-20",
-      "ERC-721",
-      "ERC-1155",
-    ],
-  },
-  {
     title: "Full Stack Development",
     items: [
       "MongoDB",
@@ -44,6 +31,19 @@ const SKILLS = [
   {
     title: "Frontend & Creative",
     items: ["React.js", "Node.js", "Three.js", "GSAP", "Tailwind CSS"],
+  },
+  {
+    title: "Blockchain & Web3",
+    items: [
+      "Ethereum",
+      "Solidity",
+      "Hardhat",
+      "Ganache",
+      "ethers.js",
+      "ERC-20",
+      "ERC-721",
+      "ERC-1155",
+    ],
   },
   {
     title: "Research & Writing",
