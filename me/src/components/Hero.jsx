@@ -58,19 +58,21 @@ const SKILLS = [
 
 const PROJECTS = [
   {
-    id: "rwa",
+    id: "music",
     featured: true,
-    emoji: "🏗️",
-    title: "Real-World Asset Tokenization Platform",
+    emoji: "🎵",
+    title: "MUSIC: Web-Based Music Streaming Application",
     description:
-      "Blockchain platform enabling fractional ownership of physical assets such as real estate, commodities, using the ERC-1155 multi-token standard. Solidity contracts are complete; frontend integration in progress. Solves the liquidity problem of traditionally illiquid assets by putting them on-chain.",
+      "Developed MUSIC, a Spotify-inspired web application built as a functional product for seamless music streaming. Designed with a modular folder architecture separating frontend, backend, and assets to ensure scalability and maintainability.",
     tagLabels: [
-      { label: "Blockchain", type: "blockchain" },
-      { label: "In Progress", type: "systems" },
+      { label: "Systems", type: "systems" },
+      { label: "Frontend", type: "creative" },
     ],
-    year: "2025",
-    link: "https://github.com/HarpreetSingh2005/Real-World-Asset-Tokenization-Platform",
+    year: "2023-24",
+    link: "https://github.com/HarpreetSingh2005/spotify-replica",
+    live: "https://music-spotify-replica.vercel.app/",
   },
+
   {
     id: "crowdcoin",
     featured: false,
@@ -84,6 +86,7 @@ const PROJECTS = [
     year: "2025",
     link: "https://github.com/HarpreetSingh2005/crowdcoin",
   },
+
   {
     id: "cubecrypt",
     featured: false,
@@ -91,12 +94,25 @@ const PROJECTS = [
     description:
       "A novel symmetric encryption algorithm inspired by Rubik's cube permutations. Published as a cryptographic system with an official patent (IN 202511098477 A).",
     tagLabels: [
-      // { label: "Research", type: "research" },
       { label: "Published", type: "research" },
       { label: "IN 202511098477 A", type: "patent-tag" },
     ],
     year: "2025",
     link: null,
+  },
+  {
+    id: "rwa",
+    featured: true,
+    emoji: "🏗️",
+    title: "Real-World Asset Tokenization Platform",
+    description:
+      "Blockchain platform enabling fractional ownership of physical assets such as real estate, commodities, using the ERC-1155 multi-token standard. Solidity contracts are complete; frontend integration in progress. Solves the liquidity problem of traditionally illiquid assets by putting them on-chain.",
+    tagLabels: [
+      { label: "Blockchain", type: "blockchain" },
+      { label: "In Progress", type: "systems" },
+    ],
+    year: "2025",
+    link: "https://github.com/HarpreetSingh2005/Real-World-Asset-Tokenization-Platform",
   },
   {
     id: "medical-ledger",
