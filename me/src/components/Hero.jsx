@@ -537,7 +537,7 @@ export default function HeroText() {
               </a>
 
               <a
-                href="https://medium.com/@harpreetsingh-mrmullbies"
+                href="https://medium.com/@harpreetsingh-mrmulbbies"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="contact-link"
