@@ -12,168 +12,210 @@ import { ReactComponent as Medium } from "./images/medium.svg";
 
 const SKILLS = [
   {
-    title: "Full Stack Development",
+    title: "Languages",
+    items: ["Python", "Java", "C", "C++", "JavaScript", "Solidity", "SQL"],
+  },
+  {
+    title: "Frontend",
     items: [
-      "MongoDB",
-      "Express.js",
-      "React.js",
-      "Node.js",
-      "Rest APIs",
-      "Authentication",
-      "Git",
-      "GitHub",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React",
+      "Next.js",
+      "Vite",
+      "Tailwind CSS",
     ],
   },
   {
-    title: "Programming",
-    items: ["Python", "C", "C++", "JavaScript"],
+    title: "Backend",
+    items: ["Node.js", "Express.js", "REST APIs", "MongoDB", "Mongoose"],
   },
   {
-    title: "Frontend & Creative",
-    items: ["React.js", "Node.js", "Three.js", "GSAP", "Tailwind CSS"],
-  },
-  {
-    title: "Blockchain & Web3",
+    title: "AI / ML",
     items: [
-      "Ethereum",
-      "Solidity",
-      "Hardhat",
-      "Ganache",
-      "ethers.js",
-      "ERC-20",
-      "ERC-721",
-      "ERC-1155",
+      "TensorFlow",
+      "Keras",
+      "scikit-learn",
+      "LLMs",
+      "Generative AI",
+      "AI Agents",
+      "Multi-Agent Systems",
     ],
   },
   {
-    title: "Research & Writing",
-    items: [
-      "Smart Contract Design",
-      "Protocol Research",
-      "Technical Writing",
-      "Patent Filing",
-    ],
+    title: "Blockchain",
+    items: ["Solidity", "Web3.js", "ethers.js", "Ethereum", "Sepolia"],
+  },
+  {
+    title: "Tools",
+    items: ["Git", "GitHub", "Docker", "Postman", "Selenium"],
   },
 ];
 
 const PROJECTS = [
   {
+    id: "prune",
+    featured: true,
+    emoji: "🌱",
+    title: "PRUNE — AI Discovery Platform",
+    description:
+      "A curated AI discovery platform focused on helping people discover useful AI tools without the overwhelming noise of large AI directories. PRUNE focuses on discovering new AI products, understanding what they do, who they are useful for, and separating useful products from hype.",
+    tagLabels: [
+      { label: "AI", type: "research" },
+      { label: "Product", type: "creative" },
+    ],
+    year: "2026",
+    link: "https://theprune.in/",
+  },
+  {
+    id: "seha",
+    featured: false,
+    title: "SEHA — Smart Contract Explainable Hybrid Analyzer",
+    description:
+      "A Python-based smart contract security analysis system focused on detecting vulnerabilities and explaining findings. Combines program analysis with explainable results to make security reports easier to understand and act on.",
+    tagLabels: [
+      { label: "Cybersecurity", type: "systems" },
+      { label: "Research", type: "research" },
+    ],
+    year: "2026",
+    link: "https://github.com/HarpreetSingh2005/solidity-analyzer",
+  },
+  {
+    id: "writing-club",
+    featured: false,
+    emoji: "✍️",
+    title: "Writing Club — Multi-Agent AI Writing Studio",
+    description:
+      "A multi-agent AI writing environment designed to support the writing process through specialized AI agents working across different stages of ideation, drafting, refinement, and content development.",
+    tagLabels: [
+      { label: "AI Agents", type: "research" },
+      { label: "Multi-Agent", type: "systems" },
+      { label: "Product", type: "creative" },
+    ],
+    year: "2026",
+    link: null,
+  },
+  {
+    id: "banking-ledger",
+    featured: false,
+    title: "Banking Ledger System",
+    description:
+      "A banking transaction and ledger management system designed around accounts, transactions, and financial record management.",
+    tagLabels: [
+      { label: "Backend", type: "systems" },
+      { label: "Database", type: "creative" },
+    ],
+    year: "2026",
+    link: "https://github.com/HarpreetSingh2005/banking-ledger-system",
+  },
+  {
     id: "music",
     featured: true,
     emoji: "🎵",
-    title: "MUSIC: Web-Based Music Streaming Application",
+    title: "Music Streaming Platform",
     description:
-      "Developed MUSIC, a Spotify-inspired web application built as a functional product for seamless music streaming. Designed with a modular folder architecture separating frontend, backend, and assets to ensure scalability and maintainability.",
+      "A full-stack music streaming application exploring modern web development, APIs, authentication, and media management.",
     tagLabels: [
-      { label: "Systems", type: "systems" },
-      { label: "Frontend", type: "creative" },
+      { label: "Full-Stack", type: "systems" },
+      { label: "React", type: "creative" },
+      { label: "APIs", type: "research" },
     ],
-    year: "2023-24",
+    year: "2024",
     link: "https://github.com/HarpreetSingh2005/spotify-replica",
     live: "https://music-spotify-replica.vercel.app/",
   },
+];
 
-  {
-    id: "crowdcoin",
-    featured: false,
-    title: "CrowdCoin",
-    description:
-      "Decentralised crowdfunding dApp inspired by Kickstarter, built entirely on Ethereum. Campaign creators set spending rules enforced by smart contracts; contributors vote on fund releases. Deployed and tested on Ethereum testnet with Hardhat.",
-    tagLabels: [
-      { label: "Blockchain", type: "blockchain" },
-      { label: "dApp", type: "systems" },
-    ],
-    year: "2025",
-    link: "https://github.com/HarpreetSingh2005/crowdcoin",
-  },
-
+const RESEARCH_ITEMS = [
   {
     id: "cubecrypt",
-    featured: false,
-    title: "CubeCrypt Encryption Algorithm",
+    title: "CubeCrypt — Symmetric Encryption Algorithm",
     description:
-      "A novel symmetric encryption algorithm inspired by Rubik's cube permutations. Published as a cryptographic system with an official patent (IN 202511098477 A).",
+      "A cryptographic encryption project based around a symmetric encryption approach. Published cryptographic system with an official patent (IN 202511098477 A).",
     tagLabels: [
-      { label: "Published", type: "research" },
+      { label: "Patent Published", type: "research" },
       { label: "IN 202511098477 A", type: "patent-tag" },
     ],
     year: "2025",
-    link: null,
-  },
-  {
-    id: "rwa",
-    featured: true,
-    emoji: "🏗️",
-    title: "Real-World Asset Tokenization Platform",
-    description:
-      "Blockchain platform enabling fractional ownership of physical assets such as real estate, commodities, using the ERC-1155 multi-token standard. Solidity contracts are complete; frontend integration in progress. Solves the liquidity problem of traditionally illiquid assets by putting them on-chain.",
-    tagLabels: [
-      { label: "Blockchain", type: "blockchain" },
-      { label: "In Progress", type: "systems" },
-    ],
-    year: "2025",
-    link: "https://github.com/HarpreetSingh2005/Real-World-Asset-Tokenization-Platform",
+    link: "https://github.com/HarpreetSingh2005/HarpreetSingh2005/blob/main/Patent.png",
   },
   {
     id: "medical-ledger",
-    featured: false,
-    title: "Digital Ledger for Medical Records",
+    title: "Medical Ledger — Blockchain-Based Medical Record Management",
     description:
-      "Research presented at ICIAS 2025-International Conference on Computational Intelligence and Autonomous Systems. Proposes a decentralised, tamper-proof system for secure patient record access using blockchain.",
+      "Research work exploring blockchain and digital ledger technologies for secure and tamper-resistant management of medical records. Presented at ICIAS 2025 (International Conference on Computational Intelligence and Autonomous Systems).",
     tagLabels: [
       { label: "Research", type: "research" },
-      { label: "ICIAS 2025", type: "research" },
+      { label: "ICIAS 2025", type: "systems" },
     ],
     year: "2025",
     link: null,
   },
   {
-    id: "apple",
-    featured: false,
-    title: "Apple Website Replica",
+    id: "book-chapter",
+    title: "Governance, Ethics and Regulatory Practices",
     description:
-      "Pixel-level recreation of Apple's hero and product sections using React, Three.js for 3D model rendering, and GSAP for scroll-driven animations. A deep dive into performance-first animation engineering.",
+      "Co-authored the book chapter 'Governance, Ethics and Regulatory Practices,' published by Deep Science Publishing in the book 'Artificial Intelligence in Cybersecurity and Risk Management'. The chapter explores ethical AI governance, regulatory frameworks, and responsible AI adoption in cybersecurity.",
     tagLabels: [
-      { label: "Creative", type: "creative" },
-      { label: "3D / GSAP", type: "creative" },
+      { label: "Book Chapter", type: "research" },
+      { label: "Cybersecurity", type: "systems" },
+      { label: "Deep Science", type: "creative" },
     ],
-    year: "2024",
-    link: "https://github.com/HarpreetSingh2005/Gsap-Apple-LandingPage",
+    year: "2025",
+    link: "https://deepscienceresearch.com/dsr/catalog/book/628",
   },
-
   {
     id: "beyond-limitz",
-    featured: false,
     emoji: "📚",
-    title: "Beyond LimitZ: Journey to Mindset Success",
+    title: "Beyond LimitZ — Journey to Mindset Success",
     description:
-      "Self-published book on mindset engineering, overcoming limitations, and achieving personal excellence. Authored under pen name Mr. Mulbbies. Explores practical strategies for mental resilience and success.",
+      "Author of Beyond LimitZ — Journey to Mindset Success, a self-help book focused on mindset, personal growth, discipline, and the journey toward meaningful goals.",
     tagLabels: [
-      { label: "Published", type: "research" },
-      { label: "Personal Development", type: "research" },
+      { label: "Author: Mr. Mulbbies", type: "creative" },
+      { label: "Personal Growth", type: "research" },
     ],
     year: "2024",
-    link: "https://www.amazon.com/Beyond-LimitZ-Journey-Mindset-Success/dp/B0D45LKYFV",
+    link: "https://www.amazon.com/dp/B0D21CN7QR?lv=shuf&bestFormat=true&channelId=704&plpRedirect=mhFallback",
   },
 ];
 
 const ACHIEVEMENTS = [
-  { icon: "🥈", text: "2nd Place: Internal Smart India Hackathon 2025" },
-  { icon: "🏅", text: "4th Place: Ignite Ideathon, University Level 2025" },
   {
-    icon: "🧠",
-    text: "2nd Place: Logic League, DSA & Problem Solving, Avikansha Fest 2025 (NMIMS)",
+    icon: "🥈",
+    text: "Internal Smart India Hackathon 2025 — Second Position with Team HexaWipe",
   },
   {
-    icon: "📖",
-    text: 'Author: "Beyond LimitZ: Journey to Mindset Success" (Pen Name: Mr. Mulbbies)',
+    icon: "🥈",
+    text: "Logic League — Second Position, DSA, NMIMS",
   },
-  { icon: "🪖", text: "NCC 'A' Grade Certificate" },
+  {
+    icon: "🏆",
+    text: "Punjab State Amateur Below 1700 FIDE Rated Chess Championship — Arbiter and Guest of Honour",
+  },
+  {
+    icon: "🏅",
+    text: "Startup Sync 2025 Business Ideathon — Fourth Position",
+  },
   {
     icon: "♟️",
-    text: "Volunteered: FIDE Rated Chess Championship, 100+ participants",
+    text: "Sangathan Chess Competition — First Position",
+  },
+  {
+    icon: "🪖",
+    text: "NCC 'A' Certificate",
+  },
+  {
+    icon: "✍️",
+    text: "Published Writer on Medium",
   },
 ];
+
+const EDUCATION = {
+  degree: "B.Tech — Computer Science & Engineering",
+  institution: "Amity University Punjab",
+  expectedGraduation: "Expected Graduation: 2027",
+};
 
 // ─── SUB-COMPONENTS ───────────────────────────────────────────
 
@@ -231,7 +273,7 @@ function ProjectCard({ project }) {
 
 export default function HeroText() {
   const ROW1 = ["HARPREET", "SINGH"];
-  const ROW2 = ["GANDHI"];
+  // const ROW2 = ["GANDHI"];
   const [activeLetters, setActiveLetters] = useState({});
   const [isFun, setIsFun] = useState(false);
   useEffect(() => {
@@ -297,10 +339,12 @@ export default function HeroText() {
           {/* <div className="name-row name-row-2">
             {ROW2.map((word, i) => renderWord(word, "r2", i))}
           </div> */}
-          <p className="hero-tagline">
-            Blockchain Engineer · Published Cryptography Researcher · Builder of
-            things that matter
+          <p className="hero-subtext">
+            AI & Software Developer · Researcher · Builder of Things That Matter
           </p>
+          {/* <p className="hero-subtext">
+            Computer Science & Engineering student building practical software, AI-powered systems, and experimental products.
+          </p> */}
           <p className="hero-mobile-hint hide-on-laptop">
             Tap letters to interact
           </p>
@@ -321,7 +365,7 @@ export default function HeroText() {
           <div className="about-inner">
             <p className="section-eyebrow">Who I am</p>
             <h2 className="section-title">
-              Engineer. Researcher. <span className="highlight">Builder.</span>
+              Software Developer. AI Explorer. <span className="highlight">Researcher.</span>
             </h2>
             {/* Main content + image wrapper */}
             <div className="about-main">
@@ -339,33 +383,22 @@ export default function HeroText() {
                   <p>
                     I'm a{" "}
                     <strong>
-                      blockchain-focused Computer Science undergraduate
-                    </strong>{" "}
-                    with hands-on expertise in Solidity smart contract
-                    development and dApp deployment. I don't just build
-                    projects, I explore ideas deeply, question assumptions, and
-                    turn concepts into working, real-world systems.
-                  </p>
-                  <p>
-                    I've developed{" "}
-                    <strong>
-                      dApps, smart contracts, and encryption systems
+                      Computer Science & Engineering student at Amity University Punjab
                     </strong>
-                    , including a deployed crowdfunding protocol, an ERC-1155
-                    RWA platform, and a{" "}
-                    <strong>published encryption algorithm</strong> with a{" "}
-                    <strong>published patent (IN 202511098477 A)</strong>. My
-                    work has been presented at{" "}
-                    <strong>international conferences</strong>, with ongoing
-                    research and a <strong>patent in progress</strong>.
+                    , with an interest in building practical software and exploring how emerging technologies can solve real problems. My work spans full-stack development, AI and LLM systems, backend engineering, automation, cybersecurity, and data-driven applications.
                   </p>
                   <p>
-                    Alongside engineering, I'm a{" "}
-                    <strong>creative enthusiast.</strong> I sketch system
-                    architectures, build 3D web experiences, and apply the same
-                    problem-solving lens to design that I do to code. I am also
-                    an <strong>Author</strong> of book "Beyond LimitZ". Each one
-                    a way to document ideas and push them forward.
+                    I enjoy taking an idea from an early concept to something people can actually use. I've worked on products involving{" "}
+                    <strong>AI discovery, multi-agent systems, web applications, APIs, databases, and intelligent workflows</strong>
+                    , while also exploring technical problems through research and experimentation.
+                  </p>
+                  <p>
+                    Alongside development, I'm interested in understanding the systems behind the technology I build. This has led me toward research in areas such as{" "}
+                    <strong>cybersecurity, cryptography, AI governance, and decentralized systems</strong>
+                    , with work presented at conferences, published as a book chapter, and a patent in cryptographic technology.
+                  </p>
+                  <p>
+                    I'm still exploring, learning, and building — sometimes through code, sometimes through research, and sometimes simply by trying to understand how something works.
                   </p>
                   <p
                     style={{
@@ -374,16 +407,17 @@ export default function HeroText() {
                     }}
                   >
                     {" "}
-                    "I believe the best technology sits at the balance of{" "}
-                    <strong>logic, research, and creativity</strong>."
+                    "Build with <strong>logic</strong>. Explore with{" "}
+                    <strong>curiosity</strong>. Create with{" "}
+                    <strong>purpose</strong>."
                   </p>
                 </div>
               </div>
               {/* Right: your photo */}
               <div className="about-photo-wrapper">
                 <img
-                  src={photo} // ← replace with your image path
-                  alt="Harpreet - Blockchain Engineer & Researcher"
+                  src={photo} // ← replace with your image path [NEW_PROFILE_PHOTO_REQUIRED]
+                  alt="Harpreet Singh - Software Developer & Researcher"
                   className="about-photo"
                 />
               </div>
@@ -392,40 +426,36 @@ export default function HeroText() {
             <div className="about-stats">
               <div className="stat-card">
                 <div className="stat-card-header">
-                  <div className="stat-card-icon">🔗</div>
-                  <h3>Blockchain</h3>
+                  <div className="stat-card-icon">🛠️</div>
+                  <h3>Software Development</h3>
                 </div>
-                <p>dApps, smart contracts, and protocol research on Ethereum</p>
+                <p>Products, prototypes, and software built from idea to implementation.</p>
+              </div>
+              <div className="stat-card">
+                <div className="stat-card-header">
+                  <div className="stat-card-icon">🤖</div>
+                  <h3>AI & Agents</h3>
+                </div>
+                <p>LLMs, generative AI, AI agents, automation, and intelligent applications.</p>
               </div>
               <div className="stat-card">
                 <div className="stat-card-header">
                   <div className="stat-card-icon">🔬</div>
-                  <h3>Research</h3>
+                  <h3>Research & Writing</h3>
                 </div>
-                <p>Published at ICIAS 2025 · BOLGA framework</p>
+                <p>Research, technical writing, publications, and explorations across emerging technologies.</p>
               </div>
               <div className="stat-card">
                 <div className="stat-card-header">
-                  <div className="stat-card-icon">🔐</div>
-                  <h3>Patent</h3>
+                  <div className="stat-card-icon">⚡</div>
+                  <h3>Technical Exploration</h3>
                 </div>
-                <p>
-                  Published cryptographic system
-                  <br />
-                  IN 202511098477 A
-                </p>
-              </div>
-              <div className="stat-card">
-                <div className="stat-card-header">
-                  <div className="stat-card-icon">🏆</div>
-                  <h3>Hackathons</h3>
-                </div>
-                <p>Award-winning developer, Smart India Hackathon 2025</p>
+                <p>Exploring emerging technologies, solving complex problems, and turning experiments into practical solutions.</p>
               </div>
             </div>
 
             <p className="about-footer">
-              Always learning. Always building. Always sketching the next idea.
+              Always learning. Always building. Always exploring what comes next.
             </p>
           </div>
         </section>
@@ -443,19 +473,41 @@ export default function HeroText() {
           </div>
         </section>
 
-        {/* ── WORK ──────────────────── */}
+        {/* ── WORK / PROJECTS ──────── */}
         <section className="panel work" id="work">
           <div className="work-inner">
-            <h2>Work</h2>
+            <h2>Projects</h2>
             <p className="section-sub">
-              Projects, research and things I've shipped
+              Products, prototypes, and practical software systems
             </p>
             <div className="projects-grid">
               {PROJECTS.map((p) => (
                 <ProjectCard key={p.id} project={p} />
               ))}
             </div>
+          </div>
+        </section>
 
+        {/* ── RESEARCH, PUBLICATIONS & IP ── */}
+        <section className="panel research" id="research">
+          <div className="research-inner">
+            <p
+              className="section-eyebrow"
+              style={{ textAlign: "center", marginBottom: "0.5rem" }}
+            >
+              Publications & IP
+            </p>
+            <h2>Research, Publications & Intellectual Property</h2>
+            <p className="section-sub">
+              Cryptographic systems, patents, peer-reviewed research, and published works
+            </p>
+            <div className="projects-grid">
+              {RESEARCH_ITEMS.map((item) => (
+                <ProjectCard key={item.id} project={item} />
+              ))}
+            </div>
+
+            {/* Achievements */}
             <div className="achievements-strip">
               <p
                 className="section-eyebrow"
@@ -472,6 +524,24 @@ export default function HeroText() {
                 ))}
               </div>
             </div>
+
+            {/* Education */}
+            <div className="education-strip">
+              <p
+                className="section-eyebrow"
+                style={{ textAlign: "center", marginBottom: "1.5rem" }}
+              >
+                Education
+              </p>
+              <div className="education-card">
+                <span className="education-icon">🎓</span>
+                <div>
+                  <div className="education-degree">{EDUCATION.degree}</div>
+                  <div className="education-school">{EDUCATION.institution}</div>
+                  <div className="education-grad">{EDUCATION.expectedGraduation}</div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -484,8 +554,8 @@ export default function HeroText() {
               <span className="highlight"> together.</span>
             </h2>
             <p className="contact-sub">
-              I'm open to internships, collaborations, research partnerships,
-              and interesting conversations about blockchain and systems design.
+              I'm open to opportunities, collaborations, research partnerships,
+              and interesting conversations about AI, software engineering, and emerging technologies.
             </p>
 
             <div className="contact-links">
@@ -537,6 +607,19 @@ export default function HeroText() {
               </a>
 
               <a
+                href="https://theprune.in/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="contact-link"
+              >
+                <span className="contact-link-icon">🌱</span>
+                <div>
+                  <div className="contact-link-label">PRUNE — AI Discovery</div>
+                  <div className="contact-link-value">https://theprune.in/</div>
+                </div>
+              </a>
+
+              <a
                 href="https://medium.com/@harpreetsingh-mrmulbbies"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -554,7 +637,7 @@ export default function HeroText() {
               </a>
 
               <a
-                href="https://a.co/d/03W9riP3"
+                href="https://www.amazon.com/dp/B0D21CN7QR?lv=shuf&bestFormat=true&channelId=704&plpRedirect=mhFallback"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="contact-link"
@@ -577,11 +660,12 @@ export default function HeroText() {
           <div className="footer-links">
             <a href="#about">About</a>
             <a href="#skills">Skills</a>
-            <a href="#work">Work</a>
+            <a href="#work">Projects</a>
+            <a href="#research">Research & IP</a>
             <a href="#contact">Contact</a>
           </div>
           <p className="footer-copy">
-            Built with curiosity, no sleep, and a Mario platformer — ©{" "}
+            Always learning. Always building. Always exploring what comes next. — ©{" "}
             {new Date().getFullYear()}
           </p>
         </footer>

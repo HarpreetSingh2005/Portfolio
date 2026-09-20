@@ -187,7 +187,7 @@ export default function MiniGame({ onLetterHit, fun, onToggleTheme }) {
     const keys = {};
     const onKeyDown = (e) => {
       keys[e.key] = true;
-      if ([" "].includes(e.key)) e.preventDefault();
+      if ([" ", "ArrowUp", "ArrowLeft", "ArrowRight"].includes(e.key)) e.preventDefault();
     };
     const onKeyUp = (e) => {
       keys[e.key] = false;
@@ -244,15 +244,15 @@ export default function MiniGame({ onLetterHit, fun, onToggleTheme }) {
     function update() {
       player.prevY = player.y;
       player.vx = 0;
-      if (keys["a"]) {
+      if (keys["a"] || keys["A"] || keys["ArrowLeft"]) {
         player.vx = -player.speed;
         player.facing = -1;
       }
-      if (keys["d"]) {
+      if (keys["d"] || keys["D"] || keys["ArrowRight"]) {
         player.vx = player.speed;
         player.facing = 1;
       }
-      if ((keys["w"] || keys[" "]) && player.grounded) {
+      if ((keys["w"] || keys["W"] || keys["ArrowUp"] || keys[" "]) && player.grounded) {
         player.vy = player.jump;
         player.grounded = false;
       }
@@ -407,16 +407,16 @@ export default function MiniGame({ onLetterHit, fun, onToggleTheme }) {
     }
 
     // ── ROTATING QUOTES — upper centre area ───────────────
-    // Written to reflect Harpreet's actual philosophy: blockchain, creativity,
-    // research, building real systems, thinking deeply before shipping.
+    // Written to reflect Harpreet's philosophy: product building, AI,
+    // systems, research, building real solutions, thinking deeply before shipping.
     const QUOTES = [
       "Don't just build — understand deeply.",
-      "Blockchain isn't a buzzword. It's infrastructure.",
-      "Every patent starts as a sketch.",
+      "Building practical software with AI & agents.",
+      "Every innovation starts with curiosity.",
       "Research first. Code second. Ship third.",
-      "Decentralise the system. Centralise the thinking.",
+      "Always learning. Always building. Always exploring what comes next.",
       "Great engineering is 80% curiosity.",
-      "Smart contracts don't lie. People do.",
+      "Turning complex problems into working products.",
       "Logic is the tool. Creativity is the edge.",
     ];
     let quoteIndex = 0;

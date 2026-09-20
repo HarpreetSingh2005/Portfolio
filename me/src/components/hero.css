@@ -165,11 +165,24 @@ body {
 }
 
 .hero-tagline {
-  margin: 3rem 0 0;
+  margin: 2.2rem 0 0;
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--text-main);
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.hero-subtext {
+  margin: 0.6rem 0 0;
   font-size: 0.82rem;
   font-weight: 400;
-  letter-spacing: 0.08em;
   color: var(--text-muted);
+  max-width: 650px;
+  text-align: center;
+  line-height: 1.5;
+  padding: 0 1rem;
 }
 
 .hero-scroll-hint {
@@ -625,7 +638,8 @@ body {
 }
 
 .skills-inner,
-.work-inner {
+.work-inner,
+.research-inner {
   max-width: 1100px;
   margin: 0 auto;
   position: relative;
@@ -633,6 +647,7 @@ body {
 
 .panel.skills h2,
 .panel.work h2,
+.panel.research h2,
 .panel.contact h2 {
   text-align: center;
   font-size: clamp(1.8rem, 3.5vw, 2.6rem);
@@ -981,6 +996,85 @@ body {
   font-size: 0.85rem;
   color: var(--text-dim);
   line-height: 1.55;
+}
+
+/* ============================================================
+   RESEARCH, PUBLICATIONS & INTELLECTUAL PROPERTY
+   ============================================================ */
+.panel.research {
+  min-height: 80vh;
+  padding: 6rem 2rem 6rem;
+  background: var(--bg-soft);
+  border-top: 1px solid var(--border-subtle);
+  position: relative;
+  overflow: hidden;
+  transition: background 0.5s ease;
+}
+
+/* ── EDUCATION ────────────────────────────────── */
+.education-strip {
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 3.5rem;
+  margin-top: 4rem;
+}
+
+.education-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.6rem 2rem;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-card);
+  max-width: 580px;
+  margin: 0 auto;
+  transition: all 0.3s ease;
+}
+
+.education-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(124, 124, 255, 0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
+}
+
+.education-icon {
+  font-size: 2.2rem;
+  flex-shrink: 0;
+}
+
+.education-degree {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 0.35rem;
+}
+
+.education-school {
+  font-size: 0.88rem;
+  color: var(--accent-cyan);
+  margin: 0 0 0.25rem;
+  font-weight: 500;
+}
+
+.education-grad {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-family: "JetBrains Mono", monospace;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .education-card {
+    padding: 1.25rem 1.4rem;
+    gap: 1.1rem;
+  }
+  .education-icon {
+    font-size: 1.8rem;
+  }
+  .education-degree {
+    font-size: 0.95rem;
+  }
 }
 
 /* ============================================================
